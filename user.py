@@ -1,6 +1,6 @@
-import os, json
+import os, json, requests
 from flask import Flask, make_response
-from werkzeug.exceptions import NotFound
+from werkzeug.exceptions import NotFound, ServiceUnavailable
 
 # addon
 def root_dir():
