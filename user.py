@@ -58,7 +58,7 @@ def user_bookings(username):
         raise NotFound("User '{}' not found.".format(username))
 
     try:
-        users_bookings = requests.get("http://127.0.0.1:6003/bookings/{}".format(username))
+        users_bookings = requests.get("http://react-ecs.orami.co.id/bookings/{}".format(username))
     except requests.exceptions.ConnectionError:
         raise ServiceUnavailable("The Bookings service is unavailable.")
 
@@ -73,7 +73,7 @@ def user_bookings(username):
         result[date] = []
         for movieid in movies:
             try:
-                movies_resp = requests.get("http://127.0.0.1:6001/movies/{}".format(movieid))
+                movies_resp = requests.get("http://react-ecs.orami.co.id/movies/{}".format(movieid))
             except requests.exceptions.ConnectionError:
                 raise ServiceUnavailable("The Movie service is unavailable.")
             movies_resp = movies_resp.json()
