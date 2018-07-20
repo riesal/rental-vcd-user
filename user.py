@@ -59,7 +59,7 @@ def user_bookings(username):
         raise NotFound("User '{}' not found.".format(username))
 
     try:
-        users_bookings = requests.get("http://test.sumobuys.com/bookings/{}".format(username))
+        users_bookings = requests.get("http://internal-docker-test-internal-alb-1335550888.ap-southeast-1.elb.amazonaws.com/bookings/{}".format(username))
     except requests.exceptions.ConnectionError:
         raise ServiceUnavailable("The Bookings service is unavailable.")
 
