@@ -1,4 +1,4 @@
-FROM 2.7-onbuild
+FROM jfloff/alpine-python:2.7-onbuild
 MAINTAINER Muhammad Fahrizal Rahman "riesal@gmail.com"
 RUN apk add curl netstat wget
 COPY . /app
