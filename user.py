@@ -34,6 +34,14 @@ def hello():
     })
 
 
+@app.route("/customers", methods=['GET'])
+def customers_list():
+    return nice_json(users)
+
+@app.route("/admin", methods=['GET'])
+def admin():
+    return nice_json(users)
+
 @app.route("/users", methods=['GET'])
 def users_list():
     return nice_json(users)
@@ -99,4 +107,5 @@ def user_suggested(username):
 
 
 if __name__ == "__main__":
-    app.run(debug=True, host='0.0.0.0', port=6004, use_reloader=True)
+    """app.run(debug=True, host='0.0.0.0', port=6004, use_reloader=True)"""
+    app.run(debug=True, host='0.0.0.0', port=8080, use_reloader=True)
